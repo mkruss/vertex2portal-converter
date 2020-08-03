@@ -8,7 +8,7 @@ Support and donations appreciated: https://streamlabs.com/mkruss1/tip
 -----
 
 Installation Instructions:
-1. Drag & drop the 'Vertex2Portal Converter.ms' file inside the startup folder.
+1. Drag & drop the 'Vertex2Portal Converter.ms' file inside the startup folder. (<3ds Max Root Folder>\scripts\Startup)
 
 Using The Tool:
 1. Go to the utilities tab & open the 'Vertices2Portal' menu.
