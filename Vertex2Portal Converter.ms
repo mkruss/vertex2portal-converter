@@ -33,8 +33,8 @@ utility vertex2portal_m "Vertices2Portal" (
     button open_cred_menu "Credits" width:75 height:20
 	on open_menu pressed do
     (
-        if (not MKTools.open or not MKTools.isDisplayed or menu.placement == #minimized) do (
-            if (menu.placement == #minimized) then (
+        if (not MKTools.open or not MKTools.isDisplayed) do (
+            if (not (menu == undefined ) and menu.placement == #minimized) then (
                 menu.placement = #normal
             ) else (
 		        menu = newRolloutFloater "V2P" 234 216
