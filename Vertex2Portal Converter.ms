@@ -30,7 +30,7 @@ rollout MKTools "Vertex2Portal Converter"
 
 utility vertex2portal_m "Vertices2Portal" (
 	button open_menu "Open" width:125 height:30
-    button open_cred_menu "Credits" width:75 height:20
+    button open_cred_menu "About" width:75 height:20
 	on open_menu pressed do
     (
         if (not MKTools.open or not MKTools.isDisplayed) do (
@@ -44,7 +44,7 @@ utility vertex2portal_m "Vertices2Portal" (
 	)
     on open_cred_menu pressed do
     (
-        messageBox "Created by MKRuss\r\nModified by Big Yoda"
+        messageBox "Vertex2Portal Converter v0.2.2 \r\n By: MKRuss, Big Yoda \r\n Open Source code. Feel free to improve by providing suggetions, recommendations, etc."
     )
 )
 
