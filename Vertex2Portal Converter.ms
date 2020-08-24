@@ -9,7 +9,7 @@ rollout MKTools "Vertex2Portal Converter"
 	(	
 		try
         for i in $.selectedVerts do (
-            vertexText.text += i.pos.x as string + ", " + i.pos.y as string + ", " + i.pos.z as string + "\r\n"
+            vertexText.text += i.pos.x as string + " " + i.pos.y as string + " " + i.pos.z as string + "\r\n"
         )
 		catch
 		(
