@@ -5,12 +5,33 @@ rollout MKTools "Vertex2Portal Converter"
     button 'clearSelectionBtn' "Clear Selection" pos:[111,149] width:100 height:30 align:#left
     button 'copyBtn' "Copy To Clipboard" pos:[11,149] width:100 height:30 align:#left
     GroupBox 'grp1' "" pos:[5,4] width:212 height:182 align:#left
+	checkbox myCheckBox "Add ' , ' (for CodeWalker use)" align:#center
+
+	global putCommas = false
+
+	on myCheckBox changed theState do
+	(
+		if theState then
+		(
+			putCommas = true
+		)else 
+		(	
+			putCommas = false
+		)
+	)
+
 	on addSelectionBtn pressed do
 	(	
 		try
         for i in $.selectedVerts do (
-            vertexText.text += i.pos.x as string + ", " + i.pos.y as string + ", " + i.pos.z as string + "\r\n"
-        )
+			if putCommas then
+			(
+				vertexText.text += i.pos.x as string + ", " + i.pos.y as string + ", " + i.pos.z as string + "\r\n"
+			)else 
+			(
+				vertexText.text += i.pos.x as string + " " + i.pos.y as string + " " + i.pos.z as string + "\r\n"
+			)
+		)
 		catch
 		(
 			messageBox "No Vertices Selected!"
@@ -37,14 +58,14 @@ utility vertex2portal_m "Vertices2Portal" (
             if (not (menu == undefined ) and menu.placement == #minimized) then (
                 menu.placement = #normal
             ) else (
-		        menu = newRolloutFloater "V2P" 234 216
+		        menu = newRolloutFloater "V2P" 234 243
             )
         )
 		addrollout MKTools menu
 	)
     on open_cred_menu pressed do
     (
-        messageBox "Vertex2Portal Converter v0.2.2 \r\n By: MKRuss, Big Yoda \r\n Open Source code. Feel free to improve by providing suggetions, recommendations, etc."
+        messageBox "Vertex2Portal Converter v0.2.2 \r\n By: MKRuss, Big Yoda, Dolu \r\n Open Source code. Feel free to improve by providing suggetions, recommendations, etc."
     )
 )
 
